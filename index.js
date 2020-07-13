@@ -3,27 +3,23 @@ function largestSubarraySum(array)
   console.log('STARTING ARRAY')
   console.log(array)
   let largestArray = [];
-  let currentTotal = sum(largestArray)
+  let currentTotal = sum(array)
 
-  for(let i = 0; i < array.length; i++)
+  let removeFirst = array.slice(1)
+  console.log('without first:')
+  console.log(removeFirst)
+  let removeLast = array.slice(0, -1)
+  console.log('without last:')
+  console.log(removeLast)
+  
+  if(sum(removeFirst) > sum(removeLast))
   {
-    let remainingArray = array.slice(i)
-    
-    if(sum(largestArray) <= sum(remainingArray))
-    {
-      console.log(`adding ${array[i]} to largestArray`)
-      largestArray.push(array[i])
-      currentTotal = sum(largestArray)
-      console.log(`current total: ${currentTotal}`)
-    }
-    else
-    {
-      let removeFirst = array.slice(1)
-      let removeLast = array.slice(0, -1)
-      if(largestSubarraySum(removeFirst) > largestSubarraySum(removeLast)
-    }
+    return largestSubarraySum(removeFirst)
   }
-  return currentTotal
+  else
+  {
+    return largestSubarraySum(removeLast)
+  }
 }
 
 function sum(array)
