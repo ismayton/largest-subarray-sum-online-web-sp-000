@@ -19,11 +19,13 @@ function largestSubarraySum(array)
     else
     {
       let subArray = array.slice(i + 1)
+      let newTotal = largestSubarraySum(subArray)
       console.log('checking sub array:')
       console.log(subArray)
-      if(largestSubarraySum(subArray) > currentTotal)
+      console.log(`newTotal: ${newTotal}`)
+      if(newTotal > currentTotal)
       {
-        return largestSubarraySum(subArray)
+        return newTotal
       }
       else
       {
