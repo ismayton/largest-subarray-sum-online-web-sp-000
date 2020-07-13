@@ -12,9 +12,10 @@ function largestSubarraySum(array)
     {
       largestArray.push(array[i])
       currentTotal = sum(largestArray)
-      console.log(`positive value found: ${array[i]}`)
+      console.log(`adding to largestArray: ${array[i]}`)
       console.log(`largestArray now:`)
       console.log(largestArray)
+      console.log(`current total: ${currentTotal}`)
     }
     else
     {
