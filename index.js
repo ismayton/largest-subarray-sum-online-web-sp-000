@@ -8,14 +8,15 @@ function largestSubarraySum(array)
   for(let i = 0; i < array.length; i++)
   {
     let remainingArray = array.slice(i)
-    if(sum(largestArray) < sum(remainingArray))
+    if(sum(largestArray) <= sum(remainingArray))
     {
       array.push(array[i])
       currentTotal = sum(largestArray)
     }
     else
     {
-      array = 
+      array.pop()
+      largestSubarraySum(array)
     }
   }
   return currentTotal
