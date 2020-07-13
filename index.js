@@ -11,7 +11,7 @@ function largestSubarraySum(array)
     
     if(sum(largestArray) <= sum(remainingArray))
     {
-      console.log(`adding ${array[i} to largestArray`)
+      console.log(`adding ${array[i]} to largestArray`)
       largestArray.push(array[i])
       currentTotal = sum(largestArray)
       console.log(`current total: ${currentTotal}`)
