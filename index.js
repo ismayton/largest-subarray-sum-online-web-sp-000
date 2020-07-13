@@ -8,30 +8,14 @@ function largestSubarraySum(array)
   for(let i = 0; i < array.length; i++)
   {
     let remainingArray = array.slice(i)
-    if(sum(largestArray) < currentTotal + value)
+    if(sum(largestArray) < sum(remainingArray))
     {
-      let subArray = array.slice(i + 1)
-      let newTotal = largestSubarraySum(subArray)
-      console.log('checking sub array:')
-      console.log(subArray)
-      console.log(`newTotal: ${newTotal} currentTotal: ${currentTotal}`)
-      if(newTotal > currentTotal)
-      {
-        return newTotal
-      }
-      else
-      {
-        return currentTotal
-      }
+      array.push(array[i])
+      currentTotal = sum(largestArray)
     }
     else
     {
-      largestArray.push(array[i])
-      currentTotal = sum(largestArray)
-      console.log(`adding to largestArray: ${array[i]}`)
-      console.log(`largestArray now:`)
-      console.log(largestArray)
-      console.log(`current total: ${currentTotal}`)
+      array = 
     }
   }
   return currentTotal
