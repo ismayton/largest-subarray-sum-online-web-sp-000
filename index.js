@@ -16,7 +16,7 @@ function largestSubarraySum(array)
     else
     {
       array.pop()
-      largestSubarraySum(array)
+      return largestSubarraySum(array)
     }
   }
   return currentTotal
