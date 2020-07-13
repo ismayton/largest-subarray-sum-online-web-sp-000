@@ -18,8 +18,9 @@ function largestSubarraySum(array)
     }
     else
     {
-      array.pop()
-      return largestSubarraySum(array)
+      let removeFirst = array.slice(1)
+      let removeLast = array.slice(0, -1)
+      if(largestSubarraySum(removeFirst) > largestSubarraySum(removeLast)
     }
   }
   return currentTotal
