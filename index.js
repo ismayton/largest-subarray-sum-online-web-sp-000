@@ -7,8 +7,8 @@ function largestSubarraySum(array)
 
   for(let i = 0; i < array.length; i++)
   {
-    let value = array[i]
-    if(currentTotal > currentTotal + value)
+    let remainingArray = array.slice(i)
+    if(sum(largestArray) < currentTotal + value)
     {
       let subArray = array.slice(i + 1)
       let newTotal = largestSubarraySum(subArray)
