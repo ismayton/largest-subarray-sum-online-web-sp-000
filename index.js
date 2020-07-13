@@ -10,7 +10,7 @@ function largestSubarraySum(array)
     let remainingArray = array.slice(i)
     if(sum(largestArray) <= sum(remainingArray))
     {
-      array.push(array[i])
+      largestArray.push(array[i])
       currentTotal = sum(largestArray)
     }
     else
