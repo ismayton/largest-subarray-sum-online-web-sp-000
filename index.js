@@ -22,7 +22,7 @@ function largestSubarraySum(array)
       let newTotal = largestSubarraySum(subArray)
       console.log('checking sub array:')
       console.log(subArray)
-      console.log(`newTotal: ${newTotal}`)
+      console.log(`newTotal: ${newTotal} currentTotal: ${currentTotal}`)
       if(newTotal > currentTotal)
       {
         return newTotal
